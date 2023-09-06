@@ -1,4 +1,4 @@
-import csc from "./mytrig.js"; 
+//import csc from "./mytrig.js"; 
 let canvas; 
 let context; 
 

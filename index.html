@@ -1,0 +1,17 @@
+<!DOCTYPE HTML> 
+<html>	
+	<head>
+		<title> My Grahping Calculator </title>
+		<script src='graphing-calc.js' type='module'> </script>
+	</head>
+	<body onload='init()'>
+		<canvas id='canvas' width='768' height='640'> 
+		</canvas> 
+		<form id='eq'> 
+			<label for='equation'> f(x) = </label>
+			<input type='text' id='equation'> </input>
+			<button type='submit'> Draw! </button>
+			<button onclick='drawCoordPlane()'> Clear </button> 
+		</form>
+	</body>
+</html>

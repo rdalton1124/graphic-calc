@@ -1,0 +1,14 @@
+<!DOCTYPE HTML> 
+<html>	
+	<head>
+		<script type='text/javascript' src='graphing-calc.js'> </script>
+	</head>
+	<body onload='init()'>
+		<canvas id='canvas' width='768' height='640'> 
+		</canvas> 
+		<form id='eq'> 
+			<input type='text' id='equation'> </input>
+			<button type='submit'> Draw! </button> 
+		</form>
+	</body>
+</html>

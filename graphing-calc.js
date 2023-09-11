@@ -1,4 +1,4 @@
-import {csc} from '/mymath.js';
+//import {csc} from '/mymath.js';
 
 let canvas;
 let context;

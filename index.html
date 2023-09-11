@@ -2,16 +2,19 @@
 <html>	
 	<head>
 		<title> My Grahping Calculator </title>
-		<script src='graphing-calc.js' type='text/javascript'> </script>
+	
 	</head>
-	<body onload='init()'>
+	<body onload='init(event)'>
 		<canvas id='canvas' width='768' height='640'> 
 		</canvas> 
 		<form id='eq'> 
 			<label for='equation'> f(x) = </label>
 			<input type='text' id='equation'> </input>
-			<button type='submit'> Draw! </button>
-			<button onclick='drawCoordPlane()'> Clear </button> 
+			<button type='submit' onclick='parseFunct(event)'> Draw! </button>
+			<button onclick='drawCoordPlane(event)'> Clear </button> 
 		</form>
+		<div id='test'>
+		</div>
+		<script defer='false' type='module' src='/graphing-calc.js'> </script>
 	</body>
 </html>

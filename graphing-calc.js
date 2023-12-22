@@ -1,4 +1,4 @@
-import {csc} from './mymath.js';
+//import {csc} from './mymath.js';
 
 let canvas;
 let context;
@@ -35,14 +35,33 @@ window.drawCoordPlane = function (event) {
   }
   context.stroke();
 };
+
+
+function buttonPresed(event) {
+  
+}
+function restrictInput(event) {
+
+}
 function replacements(str) {
   let func = str;
+
   func = func.replace('sin(', 'Math.sin(');
   func = func.replace('cos(', 'Math.cos(');
   func = func.replace('tan(', 'Math.tan(');
   func = func.replace('sqrt(', 'Math.sqrt(');
   func = func.replace('cbrt(', 'Math.cbrt(');
-//  func = func.replace('csc(', 'math2.csc(');
+
+
+  for(let i = 0; i <= 9; i++)
+    func = func.replace(String(i) + 'x', String(i) + '* x');
+
+  //REPLACE THIS AFTER FIXING IMPORT
+  func = func.replace('csc(', '1 / Math.sin(');
+  func = func.replace('sec(', '1 / Math.cos(');
+  func = func.replace('cot(', '1 / Math.tan(');
+
+
   return func;
 }
 
@@ -56,7 +75,7 @@ function drawGraph(fun) {
   context.strokeStyle = 'black';
   context.beginPath();
   context.moveTo(-15, fun(-15));
-  for (let i = -15; i < 15; i += 0.1) {
+  for (let i = -15; i < 15; i += .01) {
     // invert f(x) so that it displays correctly.
     context.lineTo(convertWidth(i), convertHeight(-fun(i)));
   }
@@ -76,7 +95,8 @@ window.parseFunct = function (event) {
   let func = document.getElementById('equation').value;
   func = func.toLowerCase();
   func = replacements(func);
+  
   func = `return ${func};`;
   drawCoordPlane();
-  drawGraph(new Function('x', func));
+  drawGraph(Function('x', func));
 };

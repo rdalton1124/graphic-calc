@@ -1,12 +1,13 @@
-//export {csc}; 
 
 function log(base, num) {
   return log(num) / log(base);
 }
 
-export function csc(x) {
-  return 1 / Math.sin(x);
-}
+export const csc = new Function("x", "return 1 / Math.sin(x);"); 
+  //return function(x) {
+  //  return 1 / Math.sin(x);
+  //};
+//}
 function sec(x) {
   return 1 / Math.cos(x);
 }
